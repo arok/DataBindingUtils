@@ -1,7 +1,6 @@
 package me.chuvashev.databindingutils;
 
 import android.databinding.BaseObservable;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import java.util.Date;
@@ -23,11 +22,8 @@ public class ObservableDate extends BaseObservable {
         mValue = value;
     }
 
-    @NonNull
+    @Nullable
     public Date get() {
-        if (mValue == null) {
-            return mValue = new Date();
-        }
         return mValue;
     }
 
