@@ -75,7 +75,7 @@ public class ObservableString extends BaseObservable implements Parcelable, Seri
         return string.get();
     }
 
-    @BindingAdapter("bind:observe")
+    @BindingAdapter("bind:observeText")
     public static void bindEditText(EditText editText, final ObservableString text) {
         if (editText.getTag(R.id.text_watcher_listener) == null) {
             editText.setTag(R.id.text_watcher_listener, true);
