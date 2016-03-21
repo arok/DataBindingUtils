@@ -58,6 +58,11 @@ public class ObservableString extends BaseObservable implements Parcelable, Seri
         dest.writeString(mValue);
     }
 
+    @Override
+    public String toString() {
+        return get();
+    }
+
     public static final Creator<ObservableString> CREATOR = new Creator<ObservableString>() {
         @Override
         public ObservableString createFromParcel(Parcel in) {
