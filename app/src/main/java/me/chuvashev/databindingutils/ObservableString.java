@@ -77,6 +77,9 @@ public class ObservableString extends BaseObservable implements Parcelable, Seri
 
     @BindingConversion
     public static String convert(ObservableString string) {
+        if (string == null) {
+            return "";
+        }
         return string.get();
     }
 
