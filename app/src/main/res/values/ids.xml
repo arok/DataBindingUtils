@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="text_watcher_listener" type="id" />
+    <item name="observable_boolean_listener" type="id" />
 </resources>

@@ -91,14 +91,18 @@ public class ObservableString extends BaseObservable implements Parcelable, Seri
             editText.addTextChangedListener(new TextWatcherAdapter() {
                 @Override
                 public void afterTextChanged(Editable s) {
-                    text.set(s.toString());
+                    if (text != null) {
+                        text.set(s.toString());
+                    }
                 }
             });
         }
 
-        String newText = text.get();
-        if (!Objects.equals(newText, editText.getText().toString())) {
-            editText.setText(newText);
+        if (text != null) {
+            String newText = text.get();
+            if (!Objects.equals(newText, editText.getText().toString())) {
+                editText.setText(newText);
+            }
         }
     }
 
