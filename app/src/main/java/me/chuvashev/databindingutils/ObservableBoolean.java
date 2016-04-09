@@ -1,6 +1,8 @@
 package me.chuvashev.databindingutils;
 
 import android.databinding.BaseObservable;
+import android.databinding.BindingAdapter;
+import android.databinding.BindingConversion;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.widget.CompoundButton;
@@ -61,6 +63,15 @@ public class ObservableBoolean extends BaseObservable implements Serializable, P
         }
     };
 
+    @BindingConversion
+    public static boolean convert(ObservableBoolean bool) {
+        if (bool == null) {
+            return false;
+        }
+        return bool.get();
+    }
+
+    @BindingAdapter("bind:observeChecked")
     public static void bind(CompoundButton button, final ObservableBoolean value) {
         if (button.getTag(R.id.observable_boolean_listener) == null) {
             button.setTag(R.id.observable_boolean_listener, Boolean.TRUE);
